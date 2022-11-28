@@ -34,14 +34,14 @@ export interface VideoControls {
   exitFullscreen(): Promise<void>
 }
 
-export interface useVideoControlsParams {
+export interface UseVideoControlsParams {
   defaultMute?: boolean
   defaultVolume?: number
   defaultPlayRate?: number
   defaultLoop?: boolean
 }
 
-export const useVideoControls = (params: useVideoControlsParams = {}) => {
+export const useVideoControls = (params: UseVideoControlsParams = {}) => {
   const {
     defaultMute = false,
     defaultVolume = 1,
@@ -58,7 +58,7 @@ export const useVideoControls = (params: useVideoControlsParams = {}) => {
 
   React.useLayoutEffect(() => {
     if (!videoRef.current) {
-      // TODO
+      console.log('video element is not defined')
       return
     }
 
